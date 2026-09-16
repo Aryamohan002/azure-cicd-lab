@@ -8,8 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Hello from GitHub Actions"
+        - name: Get the code
+          uses: actions/checkout@v4
 
-      - name: Check HTML file
-        run: test -f index.html
+        - name: Say Hello
+          run: echo "Hello from GitHub Actions"
+
+        - name: Check HTML file
+          run: test -f index.html

@@ -10,3 +10,6 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello from GitHub Actions"
+
+      - name: Check HTML file
+        run: test -f index.html

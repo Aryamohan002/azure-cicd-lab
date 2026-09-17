@@ -22,8 +22,16 @@ jobs:
 
       - name: Create website package
         run: zip website.zip index.html
+
       - name: Upload website artifact
         uses: actions/upload-artifact@v4
         with:
           name: website-package
           path: website.zip
+
+      - name: Deploy to Azure
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: webapparya
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: website.zip

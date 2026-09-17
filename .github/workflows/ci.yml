@@ -21,7 +21,7 @@ jobs:
         run: grep -q "Hello Azure CI/CD" index.html
 
       - name: Create website package
-        run: zip website.zip index.html
+        run: zip website.zip index.html server.py requirements.txt
 
       - name: Upload website artifact
         uses: actions/upload-artifact@v4
